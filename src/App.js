@@ -1,5 +1,5 @@
 import './App.css'
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextyForm from './components/TextyForm'
 import Alert from './components/Alert'
@@ -10,19 +10,19 @@ import React, { useState } from 'react'
 let tittle = "PortFolio";
 let about = "Know More"
 let theme = ''
-let darkmystyle = {
-    color :'white',
-    backgroundColor :'#0d2b42',
-}
+// let darkmystyle = {
+//     color :'white',
+//     backgroundColor :'#0d2b42',
+// }
 
-let lightmystyle = {
-    color :'#042743',
-    backgroundColor :'white',
-}
+// let lightmystyle = {
+//     color :'#042743',
+//     backgroundColor :'white',
+// }
 function App() {
     
     
-    const [mystyle, setMyStyle] = useState({})
+    // const [mystyle, setMyStyle] = useState({})
 
     
     
@@ -70,13 +70,13 @@ function App() {
             // setInterval(()=>{
             //     document.title = 'TextUtils App'
             // }, 2000)
-            setMyStyle(darkmystyle)
+            // setMyStyle(darkmystyle)
         } else {
             setMode('light')
             document.body.style.backgroundColor = 'white'
             showAlert("Light Mode Activated", "success")
             // document.title = 'TextUtils - Light'
-            setMyStyle(lightmystyle)
+            // setMyStyle(lightmystyle)
         }
     }
     
@@ -90,7 +90,7 @@ function App() {
         <Alert alert={alert}/>
         <div className='container my-3'>
         {/* <Routes> */}
-            <About mystyle={mystyle}/>
+            {/* <About mystyle={mystyle}/> */}
             {/* <Route exact path="/about" element={<About mystyle={mystyle}/>} />
             <Route exact path="/" element={<TextyForm showAlert={showAlert} heading="Enter your text to analyzed below" mode={mode}/>}/> */}
             <TextyForm showAlert={showAlert} heading="Enter your text to analyzed below" mode={mode}/>
