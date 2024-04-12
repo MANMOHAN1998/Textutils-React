@@ -1,56 +1,42 @@
-import React, {useState} from 'react'
+import React from 'react'
+// import {useState} from 'react'
 
-
-export default function About() {
+export default function About(props) {
     
-    let darkstyle = {
-        backgroundColor : 'rgba(33, 37, 41, 1)',
-        color: 'white',
-    }
+    // let darkstyle = {
+    //     backgroundColor : 'rgba(33, 37, 41, 1)',
+    //     color: 'white',
+    // }
 
-    let lightstyle = {
-    }
+    // let lightstyle = {
+    // }
 
-    const [mystyle, setMyStyle] = useState(lightstyle)
-
-    const [btntext, setBtnText] = useState("Enable dark mode")
-
-    const [btnclass, setBtnClass] = useState('btn-outline-dark')
-
-    const toggleStyle = () => {
-        if (mystyle.backgroundColor === 'rgba(33, 37, 41, 1)') {
-            console.log('A')
-            setMyStyle(lightstyle)
-            setBtnText("Enable dark mode")
-            setBtnClass('btn-outline-dark')
-        } else {
-            console.log('B')
-            setMyStyle(darkstyle)
-            setBtnText("Enable light mode")
-            setBtnClass('btn-outline-light')
-        }
-    }
+    
+    
+    // if (props.mode === 'dark') {
+    //     setMyStyle(smystyle)
+    // } else {setMyStyle({})}
 
     return (
-        <div style={mystyle}>
-            <div className='container' style={{height:'100vh'}}>
-                <h2 className='py-3'>About Us</h2>
-                <div className="accordion" id="accordionExample" style={mystyle}>
-                    <div className="accordion-item" style={mystyle}>
+        <div style={props.mystyle}>
+            <div className='container' style={{height:'0vh'}}>
+                <h2 className='py-3' style={props.mystyle}>About Us</h2>
+                <div className="accordion" id="accordionExample" style={props.mystyle}>
+                    <div className="accordion-item" mystyle>
                         <h2 className="accordion-header" >
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={mystyle}>
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={props.mystyle}>
                             Accordion Item #1
                         </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
+                        <div className="accordion-body" style={props.mystyle}>
                             <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                         </div>
                     </div>
-                    <div className="accordion-item" style={mystyle}>
+                    <div className="accordion-item" style={props.mystyle}>
                         <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={mystyle}>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={props.mystyle}>
                             Accordion Item #2
                         </button>
                         </h2>
@@ -60,9 +46,9 @@ export default function About() {
                         </div>
                         </div>
                     </div>
-                    <div className="accordion-item" style={mystyle}>
+                    <div className="accordion-item" style={props.mystyle}>
                         <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={mystyle}>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={props.mystyle}>
                             Accordion Item #3
                         </button>
                         </h2>
@@ -72,9 +58,6 @@ export default function About() {
                         </div>
                         </div>
                     </div>
-                </div>
-                <div className='container my-3'>
-                    <button onClick={toggleStyle} type='button' className={`btn p-2 ${btnclass}`}>{btntext}</button>
                 </div>
             </div>
         </div>
